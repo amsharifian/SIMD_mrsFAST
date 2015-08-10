@@ -44,34 +44,6 @@ void print(char *str)
 {
   printf("%s\n", str);
 }
-// void printBit(long *vector)
-// {
-//   long mask = 1 << VECTORSIZE - 1;
-//   //char res[100];
-//   //long mask = 1;
-//   long tmp;
-//   long reverseN;
-//   int test;
-//   for (size_t j = 0; j < BITSIZE; j++) {
-//     reverseN = reverseLong(vector[j]);
-//     for (size_t i = 0; i < VECTORSIZE; i++) {
-//       tmp = 0;
-//       tmp = reverseN & mask;
-//       tmp = tmp >> VECTORSIZE - 1;
-//       if(tmp)
-//         printf("1");
-//         //res[i] = "1";
-//       else
-//         //res[i] = "0";
-//         printf("0");
-//       reverseN = reverseN << 1;
-//     }
-//     //strrev(res);
-//     //printf("%s\n", res);
-//     printf("\n");
-//   }
-//
-// }
 
 long compare(long *in1, long *in2)
 {
@@ -82,6 +54,11 @@ long compare(long *in1, long *in2)
     res = tmp | res;
   }
   return res;
+}
+
+int popcnt(long comparision)
+{
+  int res = __builtin_popcountl(comparision);
 }
 
 int main()
@@ -101,6 +78,8 @@ int main()
   bitConvert(str1, vector1);
   bitConvert(str2, vector2);
   long res = compare(vector1,vector2);
-  printf("%ld\n", res);
+  int final = popcnt(res);
+  //printf("%ld\n", res);
+  printf("Number of ones:%d\n", final);
   return 0;
 }
