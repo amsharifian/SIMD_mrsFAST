@@ -20,6 +20,7 @@ void bitConvert(char * inputString, long **test)
                         test[i][2] = test[i][2] << 1;
                         test[i][2] = test[i][2] | 1;
                         break;
+
                     }
                 case 'C':
                     {
@@ -28,6 +29,7 @@ void bitConvert(char * inputString, long **test)
                         test[i][1] = test[i][1] | 1;
                         test[i][2] = test[i][2] << 1;
                         break;
+
                     }
                 case 'G':
                     {
@@ -37,6 +39,7 @@ void bitConvert(char * inputString, long **test)
                         test[i][2] = test[i][2] << 1;
                         test[i][2] = test[i][2] | 1;
                         break;
+
                     }
                 case 'T':
                     {
@@ -45,10 +48,15 @@ void bitConvert(char * inputString, long **test)
                         test[i][1] = test[i][1] << 1;
                         test[i][2] = test[i][2] << 1;
                         break;
+
                     }
                 default:
                     break;
+
             }
+
         }
+
     }
+
 }
