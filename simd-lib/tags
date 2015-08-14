@@ -1,0 +1,397 @@
+$(VERBOSE).SILENT	Makefile	/^$(VERBOSE).SILENT:$/
+.PHONY	Makefile	/^.PHONY : default_target$/
+.PHONY	Makefile	/^.PHONY : cmake_force$/
+.PHONY	Makefile	/^.PHONY : edit_cache$/
+.PHONY	Makefile	/^.PHONY : edit_cache\/fast$/
+.PHONY	Makefile	/^.PHONY : rebuild_cache$/
+.PHONY	Makefile	/^.PHONY : rebuild_cache\/fast$/
+.PHONY	Makefile	/^.PHONY : all$/
+.PHONY	Makefile	/^.PHONY : clean$/
+.PHONY	Makefile	/^.PHONY : clean\/fast$/
+.PHONY	Makefile	/^.PHONY : preinstall$/
+.PHONY	Makefile	/^.PHONY : preinstall\/fast$/
+.PHONY	Makefile	/^.PHONY : depend$/
+.PHONY	Makefile	/^.PHONY : help$/
+.PHONY	Makefile	/^.PHONY : cmake_check_build_system$/
+.SUFFIXES	Makefile	/^.SUFFIXES:$/
+.SUFFIXES	Makefile	/^.SUFFIXES: .hpux_make_needs_suffix_list$/
+::_bitblock	bitblock_iterator.hpp	180
+::bitblock	bitblock.hpp	73
+::bitblock	bitblock.hpp	89
+::bitblock	pabloSupport.hpp	122
+::bitblock	pabloSupport.hpp	138
+ALLOC_STATIC_ALIGNED_BITBLOCK_BUFFER	buffer.hpp	/^#define ALLOC_STATIC_ALIGNED_BITBLOCK_BUFFER(base_/
+ALLOC_STATIC_ALIGNED_BITBLOCK_BUFFER_WITH_COPYBACK	buffer.hpp	/^#define ALLOC_STATIC_ALIGNED_BITBLOCK_BUFFER_WITH_/
+ALLOC_STATIC_ALIGNED_BYTE_BUFFER	buffer.hpp	/^#define ALLOC_STATIC_ALIGNED_BYTE_BUFFER(base_ptr,/
+ALLOC_STATIC_ALIGNED_BYTE_BUFFER_WITH_COPYBACK	buffer.hpp	/^#define ALLOC_STATIC_ALIGNED_BYTE_BUFFER_WITH_COPY/
+ASSERT_BITBLOCK_ALIGN	bitblock.hpp	/^#define ASSERT_BITBLOCK_ALIGN(v) assert_bitblock_a/
+ATTRIBUTE_SIMD_ALIGN	bitblock.hpp	31
+ATTRIBUTE_SIMD_ALIGN	bitblock.hpp	33
+ATTRIBUTE_SIMD_ALIGN	bitblock.hpp	35
+BITBLOCK128_HPP_	bitblock128.hpp	2
+BITBLOCK256_HPP_	bitblock256.hpp	2
+BITBLOCK_HPP	bitblock.hpp	2
+BITBLOCK_ITERATOR_H_	bitblock_iterator.hpp	2
+BLOCK_SIZE	bitblock.hpp	26
+BLOCK_SIZE	idisa.hpp	12
+BUFFER_HPP	buffer.hpp	2
+BUILTINS_HPP_	builtins.hpp	2
+Basis_bits	transpose.hpp	8
+Basis_bits	transpose.hpp	17
+Basis_bits::bit_0	transpose.hpp	9
+Basis_bits::bit_1	transpose.hpp	10
+Basis_bits::bit_2	transpose.hpp	11
+Basis_bits::bit_3	transpose.hpp	12
+Basis_bits::bit_4	transpose.hpp	13
+Basis_bits::bit_5	transpose.hpp	14
+Basis_bits::bit_6	transpose.hpp	15
+Basis_bits::bit_7	transpose.hpp	16
+BitBlock	idisa.hpp	17
+BitBlock	idisa.hpp	41
+BitBlockForwardIterator	bitblock_iterator.hpp	435
+BitBlockForwardIterator::BitBlockForwardIterator	bitblock_iterator.hpp	/^	BitBlockForwardIterator(){}$/
+BitBlockForwardIterator::BitBlockForwardIterator	bitblock_iterator.hpp	/^	BitBlockForwardIterator(BitBlock * s): ForwardIte/
+BitBlockForwardScanner	bitblock_iterator.hpp	310
+BitBlockForwardScanner::BitBlockForwardScanner	bitblock_iterator.hpp	/^	BitBlockForwardScanner(){}$/
+BitBlockForwardScanner::BitBlockForwardScanner	bitblock_iterator.hpp	/^	BitBlockForwardScanner(BitBlock * s): ForwardScan/
+BitBlockReverseIterator	bitblock_iterator.hpp	499
+BitBlockReverseIterator::BitBlockReverseIterator	bitblock_iterator.hpp	/^	BitBlockReverseIterator(BitBlock * s): ReverseIte/
+BitBlockReverseIterator::BitBlockReverseIterator	bitblock_iterator.hpp	/^	BitBlockReverseIterator(){}$/
+BitBlockScanner	bitblock_iterator.hpp	41
+BitBlockScanner::BitBlockScanner	bitblock_iterator.hpp	/^	BitBlockScanner() {}$/
+BitBlockScanner::_8	bitblock_iterator.hpp	71
+BitBlockScanner::_bitblock	bitblock_iterator.hpp	70
+BitBlockScanner::has_next	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE int has_next() {$/
+BitBlockScanner::init	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void init(const BitBlock *s) /
+BitBlockScanner::mask	bitblock_iterator.hpp	73
+BitBlockScanner::remaining	bitblock_iterator.hpp	72
+BitBlockScanner::scan_to_next	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE int scan_to_next() {$/
+BitBlock_declare	pabloSupport.hpp	/^#define BitBlock_declare(name)  BitBlock name$/
+BitPack	s2p.hpp	192
+BitPack	s2p.hpp	195
+BitStreamIterator	bitblock_iterator.hpp	510
+BitStreamIterator::BitStreamIterator	bitblock_iterator.hpp	/^	BitStreamIterator():pos(EOS), blk(-1), blk_pos(-1/
+BitStreamIterator::BitStreamIterator	bitblock_iterator.hpp	/^	BitStreamIterator(const BitBlock * s, int cnt):po/
+BitStreamIterator::blk	bitblock_iterator.hpp	595
+BitStreamIterator::blk_pos	bitblock_iterator.hpp	596
+BitStreamIterator::debug	bitblock_iterator.hpp	/^	void debug() {$/
+BitStreamIterator::isDone	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE bool isDone() const$/
+BitStreamIterator::operator!=	bitblock_iterator.hpp	/^	bool operator!=(const BitStreamIterator& iter)$/
+BitStreamIterator::operator*	bitblock_iterator.hpp	/^	inline int32_t operator*()$/
+BitStreamIterator::operator++	bitblock_iterator.hpp	/^	inline BitStreamIterator& operator++()$/
+BitStreamIterator::operator++	bitblock_iterator.hpp	/^	BitStreamIterator operator++(int)$/
+BitStreamIterator::operator=	bitblock_iterator.hpp	/^	BitStreamIterator& operator=(const BitStreamItera/
+BitStreamIterator::operator==	bitblock_iterator.hpp	/^	bool operator==(const BitStreamIterator& iter)$/
+BitStreamIterator::pos	bitblock_iterator.hpp	594
+BitStreamIterator::scan_blk	bitblock_iterator.hpp	598
+BitStreamIterator::scan_blk_cnt	bitblock_iterator.hpp	599
+BitStreamIterator::scan_to_next	bitblock_iterator.hpp	/^	inline void scan_to_next() {$/
+BitStreamIterator::strm	bitblock_iterator.hpp	597
+BitStreamIterator::~BitStreamIterator	bitblock_iterator.hpp	/^	virtual ~BitStreamIterator() {};$/
+BytePack	bitblock.hpp	24
+BytePack	s2p.hpp	13
+CARRYQ_HPP_	carryQ.hpp	2
+CMAKE_BINARY_DIR	Makefile	/^CMAKE_BINARY_DIR = \/home\/amirali\/svn\/simd-lib$/
+CMAKE_COMMAND	Makefile	/^CMAKE_COMMAND = \/usr\/bin\/cmake$/
+CMAKE_SOURCE_DIR	Makefile	/^CMAKE_SOURCE_DIR = \/home\/amirali\/svn\/simd-lib$/
+CONFIG_HPP_	config.hpp	2
+COPY_BACK_BITBLOCK_BUFFER	buffer.hpp	/^#define COPY_BACK_BITBLOCK_BUFFER(copyback_ptr, ba/
+COPY_BACK_BYTE_BUFFER	buffer.hpp	/^#define COPY_BACK_BYTE_BUFFER(copyback_ptr, base_p/
+CarryArray	carryQ.hpp	59
+CarryArray::BitBlock_add_ci_co	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_add_ci_co(B/
+CarryArray::BitBlock_advance_ci_co	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_advance_ci_/
+CarryArray::BitBlock_advance_then_scanthru	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_advance_the/
+CarryArray::BitBlock_exclusive_span	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_exclusive_s/
+CarryArray::BitBlock_inclusive_span	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_inclusive_s/
+CarryArray::BitBlock_scanthru_ci_co	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_scanthru_ci/
+CarryArray::BitBlock_scantofirst	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_scantofirst/
+CarryArray::BitBlock_span_upto	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_span_upto(B/
+CarryArray::BitBlock_sub_ci_co	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock BitBlock_sub_ci_co(B/
+CarryArray::CarryAdjust	carryQ.hpp	/^	IDISA_ALWAYS_INLINE void CarryAdjust(uint16_t car/
+CarryArray::CarryArray	carryQ.hpp	/^	CarryArray()$/
+CarryArray::CarryCombine	carryQ.hpp	/^	IDISA_ALWAYS_INLINE void CarryCombine(carry_t loc/
+CarryArray::CarryCombine1	carryQ.hpp	/^	IDISA_ALWAYS_INLINE void CarryCombine1(uint16_t c/
+CarryArray::CarryDequeueEnqueue	carryQ.hpp	/^	IDISA_ALWAYS_INLINE void CarryDequeueEnqueue(uint/
+CarryArray::CarryFlip	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock CarryFlip(carry_t ca/
+CarryArray::CarryFlip	carryQ.hpp	/^	IDISA_ALWAYS_INLINE BitBlock CarryFlip(carry_t ca/
+CarryArray::CarryQ_Adjust	carryQ.hpp	/^	IDISA_ALWAYS_INLINE void CarryQ_Adjust(uint16_t c/
+CarryArray::CarryRange	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t CarryRange(uint16_t c/
+CarryArray::CarryTest	carryQ.hpp	/^	IDISA_ALWAYS_INLINE bool CarryTest(uint16_t carry/
+CarryArray::GetCarry	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t GetCarry(uint16_t car/
+CarryArray::Pending64	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t Pending64(uint16_t ad/
+CarryArray::SetCarry	carryQ.hpp	/^	IDISA_ALWAYS_INLINE void SetCarry(carry_t carryVa/
+CarryArray::carry_flip	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t carry_flip(carry_t ca/
+CarryArray::carry_flip	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t carry_flip(carry_t ca/
+CarryArray::carry_or	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t carry_or(carry_t carr/
+CarryArray::carry_or	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t carry_or(carry_t carr/
+CarryArray::cq	carryQ.hpp	72
+CarryArray::get_carry_in	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t get_carry_in(uint16_t/
+CarryArray::get_pending64	carryQ.hpp	/^	IDISA_ALWAYS_INLINE carry_t get_pending64(uint16_/
+CarryArray::test_carry	carryQ.hpp	/^	IDISA_ALWAYS_INLINE bool test_carry(carry_t carry/
+CarryArray::test_carry	carryQ.hpp	/^	IDISA_ALWAYS_INLINE bool test_carry(carry_t carry/
+CarryArray::~CarryArray	carryQ.hpp	/^	~CarryArray() {}$/
+CarryCount	carryQ.hpp	46
+CarryCount	carryQ.hpp	58
+CarryDeclare	carryQ.hpp	/^#define CarryDeclare(name, carry1_count, carryN_co/
+Dequeue_bit	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE BitBlock Dequeue_bit(BitBlock /
+EOS	bitblock_iterator.hpp	241
+EQUALS	Makefile	/^EQUALS = =$/
+FIELD_TYPE	idisa128.hpp	26
+FILE	cmake_install.cmake	/^  FILE(APPEND "\/home\/amirali\/svn\/simd-lib\/${CMAKE_/
+FILEPATH	CMakeCache.txt	18
+FW	bitblock_iterator.hpp	38
+FW	bitblock_iterator.hpp	76
+FieldType	idisa128.hpp	27
+FieldType	idisa128.hpp	31
+FieldType	idisa128.hpp	32
+FieldType	idisa128.hpp	33
+FieldType	idisa128.hpp	34
+FieldType	idisa128.hpp	35
+FieldType	idisa128.hpp	36
+FieldType	idisa128.hpp	37
+FieldType	idisa128.hpp	38
+FieldType	idisa128.hpp	39
+FieldType::T	idisa128.hpp	28
+FieldType::T	idisa128.hpp	31
+FieldType::T	idisa128.hpp	32
+FieldType::T	idisa128.hpp	33
+FieldType::T	idisa128.hpp	34
+FieldType::T	idisa128.hpp	35
+FieldType::T	idisa128.hpp	36
+FieldType::T	idisa128.hpp	37
+FieldType::T	idisa128.hpp	38
+FieldType::T	idisa128.hpp	39
+ForwardIterator	bitblock_iterator.hpp	372
+ForwardIterator::ForwardIterator	bitblock_iterator.hpp	/^	ForwardIterator(bitblock_t * s): scanner(s)$/
+ForwardIterator::ForwardIterator	bitblock_iterator.hpp	/^	ForwardIterator() {}$/
+ForwardIterator::ForwardScanner	bitblock_iterator.hpp	432
+ForwardIterator::init	bitblock_iterator.hpp	/^	void init(bitblock_t * s)$/
+ForwardIterator::isDone	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE bool isDone() const$/
+ForwardIterator::operator!=	bitblock_iterator.hpp	/^	bool operator!=(const ForwardIterator& iter)$/
+ForwardIterator::operator*	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE int32_t operator*()$/
+ForwardIterator::operator++	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE ForwardIterator& operator++()/
+ForwardIterator::operator++	bitblock_iterator.hpp	/^	ForwardIterator operator++(int)$/
+ForwardIterator::operator==	bitblock_iterator.hpp	/^	bool operator==(const ForwardIterator& iter)$/
+ForwardIterator::scanner	bitblock_iterator.hpp	432
+ForwardScanner	bitblock_iterator.hpp	257
+ForwardScanner::BLOCK_COUNT	bitblock_iterator.hpp	306
+ForwardScanner::ForwardScanner	bitblock_iterator.hpp	/^	ForwardScanner(){}$/
+ForwardScanner::ForwardScanner	bitblock_iterator.hpp	/^	ForwardScanner(const bitblock_t * s) {$/
+ForwardScanner::get_pos	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE int32_t get_pos() const {retu/
+ForwardScanner::get_strm	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE const bitblock_t * get_strm()/
+ForwardScanner::init	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void init(const bitblock_t * /
+ForwardScanner::is_done	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE bool is_done() const {return /
+ForwardScanner::move_to	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void move_to(uint32_t new_pos/
+ForwardScanner::scan_to_next	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE int32_t scan_to_next() {$/
+ForwardScanner::set_pos	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void set_pos(int32_t pos) {(t/
+ForwardScanner::set_strm	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void set_strm(const bitblock_/
+IDISA128_HPP	idisa128.hpp	9
+IDISA256_HPP	idisa256.hpp	9
+IDISA_ALWAYS_INLINE	config.hpp	53
+IDISA_ALWAYS_INLINE	config.hpp	55
+IDISA_ALWAYS_INLINE	config.hpp	59
+IDISA_ALWAYS_INLINE	config.hpp	61
+IDISA_HPP	idisa.hpp	9
+IDISA_INLINE	config.hpp	32
+IDISA_INLINE	config.hpp	34
+IDISA_INLINE	config.hpp	38
+IDISA_INLINE	config.hpp	40
+IF	cmake_install.cmake	/^IF(NOT DEFINED CMAKE_INSTALL_PREFIX)$/
+LocalCarryCombine	carryQ.hpp	/^#define LocalCarryCombine(carrySet, localCarry, ca/
+LocalCarryDeclare	carryQ.hpp	/^#define LocalCarryDeclare(name, count)\\$/
+Mmain.cpp	main.cpp	/^int main()$/
+PABLOSUPPORT_HPP_	pabloSupport.hpp	11
+PARALLEL_COUNT	bitblock_iterator.hpp	159
+RM	Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/
+ReverseIterator	bitblock_iterator.hpp	442
+ReverseIterator::ReverseIterator	bitblock_iterator.hpp	/^	ReverseIterator(BitBlock * s): scanner(s)$/
+ReverseIterator::ReverseIterator	bitblock_iterator.hpp	/^	ReverseIterator() {}$/
+ReverseIterator::ReverseScanner	bitblock_iterator.hpp	496
+ReverseIterator::init	bitblock_iterator.hpp	/^	void init(bitblock_t * s)$/
+ReverseIterator::isDone	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE bool isDone() const$/
+ReverseIterator::operator!=	bitblock_iterator.hpp	/^	bool operator!=(const ReverseIterator& iter)$/
+ReverseIterator::operator*	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE int32_t operator*()$/
+ReverseIterator::operator--	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE ReverseIterator& operator--()/
+ReverseIterator::operator--	bitblock_iterator.hpp	/^	ReverseIterator operator--(int)$/
+ReverseIterator::operator==	bitblock_iterator.hpp	/^	bool operator==(const ReverseIterator& iter)$/
+ReverseIterator::scanner	bitblock_iterator.hpp	496
+ReverseScanner	bitblock_iterator.hpp	317
+ReverseScanner::BLOCK_COUNT	bitblock_iterator.hpp	364
+ReverseScanner::ReverseScanner	bitblock_iterator.hpp	/^	ReverseScanner(){}$/
+ReverseScanner::ReverseScanner	bitblock_iterator.hpp	/^	ReverseScanner(const bitblock_t * s) {$/
+ReverseScanner::get_pos	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE int32_t get_pos() const {retu/
+ReverseScanner::get_strm	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE const bitblock_t * get_strm()/
+ReverseScanner::init	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void init(const bitblock_t * /
+ReverseScanner::is_done	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE bool is_done() const {return /
+ReverseScanner::move_to	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void move_to(uint32_t new_pos/
+ReverseScanner::scan_to_next	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE int32_t scan_to_next() {$/
+ReverseScanner::set_pos	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void set_pos(int32_t pos) {(t/
+ReverseScanner::set_strm	bitblock_iterator.hpp	/^	IDISA_ALWAYS_INLINE void set_strm(const bitblock_/
+S2P_ALGORITHM	s2p.hpp	33
+S2P_ALGORITHM	s2p.hpp	37
+S2P_ALGORITHM	s2p.hpp	41
+S2P_HPP	s2p.hpp	9
+SHELL	Makefile	/^SHELL = \/bin\/sh$/
+SUFFIXES	Makefile	/^SUFFIXES =$/
+ScanForwardIntrinsic	builtins.hpp	44
+ScanForwardIntrinsic	builtins.hpp	48
+ScanForwardIntrinsic	builtins.hpp	66
+ScanForwardIntrinsic	builtins.hpp	73
+ScanForwardIntrinsic	builtins.hpp	78
+ScanForwardIntrinsic	builtins.hpp	90
+ScanReverseIntrinsic	builtins.hpp	45
+ScanReverseIntrinsic	builtins.hpp	49
+ScanReverseIntrinsic	builtins.hpp	67
+ScanReverseIntrinsic	builtins.hpp	74
+ScanReverseIntrinsic	builtins.hpp	79
+ScanReverseIntrinsic	builtins.hpp	91
+ScanWord	builtins.hpp	43
+ScanWord	builtins.hpp	47
+ScanWord	builtins.hpp	72
+ScanWord	builtins.hpp	77
+Scanner	bitblock_iterator.hpp	244
+Scanner::Scanner	bitblock_iterator.hpp	/^	Scanner(): strm(NULL), pos(EOS), blk(-1), scan_bl/
+Scanner::Scanner	bitblock_iterator.hpp	/^	Scanner(const bitblock_t * s, uint32_t start_pos,/
+Scanner::blk	bitblock_iterator.hpp	252
+Scanner::pos	bitblock_iterator.hpp	251
+Scanner::scan_blk	bitblock_iterator.hpp	253
+Scanner::strm	bitblock_iterator.hpp	250
+TRANSPOSE_HPP	transpose.hpp	2
+Transpose	transpose.hpp	40
+Transpose::Transpose	transpose.hpp	/^  Transpose() {}$/
+Transpose::clear	transpose.hpp	/^  void clear() {}$/
+Transpose::do_block	transpose.hpp	/^  void do_block(char * bytedata, Basis_bits & basi/
+Transpose::do_final_block	transpose.hpp	/^  void do_final_block(char * bytedata, Basis_bits /
+_FW	bitblock_iterator.hpp	39
+_FW	bitblock_iterator.hpp	75
+__STDC_LIMIT_MACROS	bitblock.hpp	14
+adc	bitblock128.hpp	/^IDISA_ALWAYS_INLINE void adc(bitblock128_t x, bitb/
+adc	bitblock128.hpp	/^IDISA_ALWAYS_INLINE void adc(bitblock128_t x, bitb/
+adc	bitblock256.hpp	/^IDISA_ALWAYS_INLINE void adc(bitblock256_t x, bitb/
+adc	bitblock256.hpp	/^static inline void adc(bitblock256_t x, bitblock25/
+adc	bitblock256.hpp	/^static inline void adc(bitblock256_t x, bitblock25/
+adc128	bitblock256.hpp	/^IDISA_ALWAYS_INLINE void adc128(bitblock128_t x, b/
+add_ci_co	bitblock128.hpp	/^static IDISA_ALWAYS_INLINE void add_ci_co(bitblock/
+add_ci_co	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE void add_ci_co(bitblock/
+adv_ci_co	bitblock128.hpp	/^static IDISA_ALWAYS_INLINE void adv_ci_co(bitblock/
+adv_ci_co	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE void adv_ci_co(bitblock/
+advance_with_carry	bitblock128.hpp	/^IDISA_ALWAYS_INLINE void advance_with_carry(bitblo/
+advance_with_carry	bitblock128.hpp	/^IDISA_ALWAYS_INLINE void advance_with_carry(bitblo/
+advance_with_carry	bitblock256.hpp	/^IDISA_ALWAYS_INLINE void advance_with_carry(bitblo/
+advance_with_carry128	bitblock256.hpp	/^IDISA_ALWAYS_INLINE void advance_with_carry128(bit/
+all	Makefile	/^all: cmake_check_build_system$/
+assert_bitblock_align	bitblock.hpp	/^static IDISA_ALWAYS_INLINE void assert_bitblock_al/
+assert_bitblock_align	bitblock.hpp	/^static IDISA_ALWAYS_INLINE void assert_bitblock_al/
+avx_general_combine256	bitblock256.hpp	/^#define avx_general_combine256(x, y) \\$/
+avx_select_hi128	bitblock256.hpp	/^#define avx_select_hi128(x) \\$/
+avx_select_lo128	bitblock256.hpp	/^#define avx_select_lo128(x) \\$/
+bitblock	idisa.hpp	34
+bitblock	idisa.hpp	58
+bitblock2carry	bitblock128.hpp	/^static IDISA_ALWAYS_INLINE carry_t bitblock2carry(/
+bitblock2carry	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE carry_t bitblock2carry(/
+bitblock2carry	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE carry_t bitblock2carry(/
+bitblock_count	bitblock_iterator.hpp	102
+bitshift_step	s2p.hpp	/^#define bitshift_step(s0, s1, s2, s3, s4, s5, s6, /
+bitstream_scan	bitblock.hpp	/^IDISA_ALWAYS_INLINE uint32_t bitstream_scan(BitBlo/
+carry2bitblock	bitblock128.hpp	/^static IDISA_ALWAYS_INLINE bitblock128_t carry2bit/
+carry2bitblock	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE bitblock256_t carry2bit/
+carry2bitblock	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE bitblock256_t carry2bit/
+carry2uint64	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE uint64_t carry2uint64(c/
+carry2uint64	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE uint64_t carry2uint64(c/
+carry_t	bitblock128.hpp	30
+carry_t	bitblock256.hpp	30
+carry_t	bitblock256.hpp	33
+carry_value_0	carryQ.hpp	64
+carry_value_0	carryQ.hpp	68
+carry_value_1	carryQ.hpp	65
+carry_value_1	carryQ.hpp	69
+carryout2carry	bitblock128.hpp	/^static IDISA_ALWAYS_INLINE carry_t carryout2carry(/
+carryout2carry	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE carry_t carryout2carry(/
+clean	Makefile	/^clean:$/
+clean/fast	Makefile	/^clean\/fast: clean$/
+cmake_check_build_system	Makefile	/^cmake_check_build_system:$/
+cmake_force	Makefile	/^cmake_force:$/
+convert	bitblock128.hpp	/^IDISA_ALWAYS_INLINE bitblock128_t convert(uint64_t/
+convert	bitblock128.hpp	/^IDISA_ALWAYS_INLINE uint64_t convert (bitblock128_/
+convert	bitblock256.hpp	/^IDISA_ALWAYS_INLINE bitblock256_t convert(uint64_t/
+convert	bitblock256.hpp	/^IDISA_ALWAYS_INLINE uint64_t convert(bitblock256_t/
+convert_128	bitblock256.hpp	/^IDISA_ALWAYS_INLINE bitblock128_t convert_128(uint/
+count_forward_zeroes	bitblock.hpp	/^IDISA_ALWAYS_INLINE uint32_t count_forward_zeroes(/
+count_reverse_zeroes	bitblock.hpp	/^IDISA_ALWAYS_INLINE uint32_t count_reverse_zeroes(/
+default_target	Makefile	/^default_target: all$/
+depend	Makefile	/^depend:$/
+edit_cache	Makefile	/^edit_cache:$/
+edit_cache/fast	Makefile	/^edit_cache\/fast: edit_cache$/
+esimd	idisa.hpp	27
+esimd	idisa.hpp	51
+has_bit	bitblock_iterator.hpp	/^#define has_bit(x) (x != 0)$/
+has_bit	bitblock_iterator.hpp	620
+help	Makefile	/^help:$/
+hsimd	idisa.hpp	23
+hsimd	idisa.hpp	47
+interpose32	carryQ.hpp	/^#define interpose32(x,y,pos) interpose32_<pos>(x,y/
+interpose32_	carryQ.hpp	/^IDISA_ALWAYS_INLINE BitBlock interpose32_(BitBlock/
+interpose64_	carryQ.hpp	/^IDISA_ALWAYS_INLINE BitBlock interpose64_(BitBlock/
+likely	builtins.hpp	/^	IDISA_ALWAYS_INLINE long likely(long x) {$/
+likely	builtins.hpp	/^	IDISA_ALWAYS_INLINE long likely(long x) {$/
+mask_forward_zeroes	bitblock.hpp	/^IDISA_ALWAYS_INLINE BitBlock mask_forward_zeroes(u/
+mask_reverse_zeroes	bitblock.hpp	/^IDISA_ALWAYS_INLINE BitBlock mask_reverse_zeroes(u/
+max	config.hpp	22
+min	config.hpp	21
+movemask_step	s2p.hpp	/^#define movemask_step(s7, s6, s5, s4, s3, s2, s1, /
+mvmd	idisa.hpp	31
+mvmd	idisa.hpp	55
+pablo_blk_Advance	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_Advance(BitB/
+pablo_blk_AdvanceThenScanThru	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_AdvanceThenS/
+pablo_blk_AdvanceThenScanTo	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_AdvanceThenS/
+pablo_blk_Advance_n_	pabloSupport.hpp	/^template <int n> IDISA_ALWAYS_INLINE carry_t pablo/
+pablo_blk_ExclusiveSpan	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_ExclusiveSpa/
+pablo_blk_InclusiveSpan	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_InclusiveSpa/
+pablo_blk_IndexOf	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE uint64_t pablo_blk_IndexOf(Bit/
+pablo_blk_Lookahead_n_	pabloSupport.hpp	/^template <int n> IDISA_ALWAYS_INLINE carry_t pablo/
+pablo_blk_MatchStar	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_MatchStar(Bi/
+pablo_blk_ScanThru	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_ScanThru(Bit/
+pablo_blk_ScanTo	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_ScanTo(BitBl/
+pablo_blk_ScanToFirst	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_ScanToFirst(/
+pablo_blk_SpanUpTo	pabloSupport.hpp	/^IDISA_ALWAYS_INLINE carry_t pablo_blk_SpanUpTo(Bit/
+pablo_blk_match	pabloSupport.hpp	/^template <typename T> IDISA_ALWAYS_INLINE BitBlock/
+preinstall	Makefile	/^preinstall: all$/
+preinstall/fast	Makefile	/^preinstall\/fast:$/
+print_register	bitblock.hpp	/^void print_register(const char * var_name, T v) {$/
+rebuild_cache	Makefile	/^rebuild_cache:$/
+rebuild_cache/fast	Makefile	/^rebuild_cache\/fast: rebuild_cache$/
+s2p	s2p.hpp	/^#define s2p(s0, s1, s2, s3, s4, s5, s6, s7, p0, p1/
+s2p_bytepack	s2p.hpp	/^#define s2p_bytepack(s0, s1, s2, s3, s4, s5, s6, s/
+s2p_bytepack	s2p.hpp	/^#define s2p_bytepack(s0, s1, s2, s3, s4, s5, s6, s/
+s2p_do_block	transpose.hpp	/^static IDISA_ALWAYS_INLINE void s2p_do_block(ByteP/
+s2p_do_final_block	transpose.hpp	/^static IDISA_ALWAYS_INLINE void s2p_do_final_block/
+s2p_ideal	s2p.hpp	/^#define s2p_ideal(s0, s1, s2, s3, s4, s5, s6, s7, /
+s2p_movemask	s2p.hpp	/^#define s2p_movemask(s0, s1, s2, s3, s4, s5, s6, s/
+s2p_step	s2p.hpp	/^#define s2p_step(s0, s1, hi_mask, shift, p0, p1)  /
+s2p_step	s2p.hpp	/^#define s2p_step(s0, s1, hi_mask, shift, p0, p1)  /
+s2p_step_shuf	s2p.hpp	/^#define s2p_step_shuf(shuf, s0, s1, hi_mask, shift/
+sbb	bitblock128.hpp	/^IDISA_ALWAYS_INLINE void sbb(bitblock128_t x, bitb/
+sbb	bitblock128.hpp	/^IDISA_ALWAYS_INLINE void sbb(bitblock128_t x, bitb/
+sbb	bitblock256.hpp	/^IDISA_ALWAYS_INLINE void sbb(bitblock256_t x, bitb/
+sbb128	bitblock256.hpp	/^IDISA_ALWAYS_INLINE void sbb128(bitblock128_t x, b/
+scan_backward_zeroes	builtins.hpp	/^        IDISA_ALWAYS_INLINE uint32_t scan_backward/
+scan_backward_zeroes	builtins.hpp	/^        IDISA_ALWAYS_INLINE int scan_backward_zero/
+scan_forward_zeroes	builtins.hpp	/^        IDISA_ALWAYS_INLINE uint32_t scan_forward_/
+scan_forward_zeroes	builtins.hpp	/^        IDISA_ALWAYS_INLINE int scan_forward_zeroe/
+simd	idisa.hpp	19
+simd	idisa.hpp	43
+simd_const_1	pabloSupport.hpp	25
+simd_sign_bit	pabloSupport.hpp	27
+sub_bi_bo	bitblock128.hpp	/^static IDISA_ALWAYS_INLINE void sub_bi_bo(bitblock/
+sub_bi_bo	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE void sub_bi_bo(bitblock/
+ubitblock	bitblock128.hpp	16
+ubitblock	bitblock256.hpp	18
+ubitblock::_128	bitblock128.hpp	18
+ubitblock::_256	bitblock256.hpp	20
+ubitblock::_bitblock	bitblock128.hpp	17
+ubitblock::_bitblock	bitblock256.hpp	19
+ubitblock_declare	pabloSupport.hpp	/^#define ubitblock_declare(name, n) \\$/
+uint2carry	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE carry_t uint2carry(uint/
+uint2carry	bitblock256.hpp	/^static IDISA_ALWAYS_INLINE carry_t uint2carry(uint/
+unlikely	builtins.hpp	/^	IDISA_ALWAYS_INLINE long unlikely(long x) {$/
+unlikely	builtins.hpp	/^	IDISA_ALWAYS_INLINE long unlikely(long x) {$/
