@@ -1,11 +1,10 @@
-#include "bitConvert.hpp"
 #include "common.hpp"
 
 void bitConvert(char * inputString, long **test)
 {
     int cnt;
     char tmp;
-    int array_size = VECTORSIZE/WORD_SIZE;
+    int array_size = VECTOR_SIZE/WORD_SIZE;
 
     for(int i =0; i < array_size; i++)
     {

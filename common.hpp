@@ -1,6 +1,8 @@
 #ifndef __COMMON__
 #define __COMMON__
 
+#include<iostream>
+#include<time.h>
 #include"simd-lib/bitblock.hpp"
 
 #include"bitConvert.hpp"
@@ -11,7 +13,9 @@
 
 #include"simd-lib/idisa.hpp"
 
+#include"compare.hpp"
+
 #define WORD_SIZE 32
-#define VECTORSIZE 64
+#define VECTOR_SIZE 64
 #define BITSIZE 3
 #endif
