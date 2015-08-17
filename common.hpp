@@ -17,5 +17,6 @@
 
 #define WORD_SIZE 32
 #define VECTOR_SIZE 64
-#define BITSIZE 3
+#define BITSIZE 3     
+#define STRING_SIZE 20
 #endif

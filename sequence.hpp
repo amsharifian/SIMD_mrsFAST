@@ -4,5 +4,6 @@
 #include "common.hpp"
 
 void generateRandomSequence(char *str);
+void generateSecondRandomSeq(char *strin, char *strout);
 
 #endif

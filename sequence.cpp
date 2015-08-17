@@ -1,3 +1,4 @@
+#include<iostream>
 #include"sequence.hpp"
 
 void generateRandomSequence(char *str)
@@ -38,15 +39,17 @@ void generateRandomSequence(char *str)
 //
 void generateSecondRandomSeq(char *strin, char *strout)
 {
+    srand(time(NULL));
     int r;
     for (int i = 0; i < VECTOR_SIZE; i++)
     {
-        srand(time(NULL));
-        //r = rand() % 100;
-
+        //srand(time(NULL));
+        r = rand() % 100;
+        //std::cout << r << std::endl;
+        
         if(r < 90)
         {
-            strin[i] = strout[i];
+            strout[i] = strin[i];
         }
         else
         {
@@ -55,22 +58,22 @@ void generateSecondRandomSeq(char *strin, char *strout)
             switch (r) {
                 case 0:
                     {
-                        strin[i] = 'A';
+                        strout[i] = 'A';
                         break;
                     }
                 case 1:
                     {
-                        strin[i] = 'C';
+                        strout[i] = 'C';
                         break;
                     }
                 case 2:
                     {
-                        strin[i] = 'G';
+                        strout[i] = 'G';
                         break;
                     }
                 case 3:
                     {
-                        strin[i] = 'T';
+                        strout[i] = 'T';
                         break;
                     }
             }
