@@ -98,6 +98,8 @@ int main()
     simd_compare_32v(str_vector, v_str_ref,VECTOR_SIZE, ERROR_THERSHOLD);
 
 
+    //TODO add your function here
+
     //Freeing memory
     delete[] str_ref;   
     delete[] res;
