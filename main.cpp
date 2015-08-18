@@ -94,6 +94,10 @@ int main()
     printf("Test: %ld \n", res2);
 
 
+    //Testing SIMD Optimized
+    simd_compare_32v(str_vector, v_str_ref,VECTOR_SIZE, ERROR_THERSHOLD);
+
+
     //Freeing memory
     delete[] str_ref;   
     delete[] res;
