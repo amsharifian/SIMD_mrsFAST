@@ -23,6 +23,8 @@ int popcnt(long comparision)
 
 int main()
 {
+
+    int passed = 0;
     char **test_str;
 
     //Generating reference string
@@ -32,7 +34,7 @@ int main()
     //Measuring size of array needed for saving a string.
     //For instance if size of string is 40 then we need an arrya with size two or we need two integer to save the string
     //array_size is size of that array
-    int array_size = (VECTOR_SIZE/WORD_SIZE) + 1;
+    int array_size = ((VECTOR_SIZE - 1)/WORD_SIZE) + 1;
 
     //Defining vector of strings for testing. STRING_SIZE means size of our dataset.
     //According to the size of array_size we define second dimension of the array and 
@@ -74,6 +76,7 @@ int main()
     for(int i = 0; i < STRING_SIZE; i++)
     {
         generateSecondRandomSeq(str_ref, test_str[i]);
+        print(test_str[i]);
     }
     bitConvert(str_ref, v_str_ref);
     for(int i = 0; i < STRING_SIZE; i++)
@@ -81,21 +84,30 @@ int main()
         bitConvert(test_str[i], str_vector[i]);
     }
 
-    compare(v_str_ref,str_vector[10],res);
-    res2 = simple_simd_compare(v_str_ref, str_vector[10]);
-
-
-    int final = 0;
-    for(int i = 0; i < array_size; i++)
+    for(int p = 0; p < STRING_SIZE; p++)
     {
-        final += popcnt(res[i]);
+        //compare(v_str_ref,str_vector[p],res);
+        res2 = simple_simd_compare(v_str_ref, str_vector[p]);
+        //res2 = 0;
+        std::cout << "String " << p << ":" << res2 << std::endl;
+        if(res2 < ERROR_THERSHOLD)
+        {
+            passed++;
+        }
     }
-    printf("Number of ones:%d\n", final);
-    printf("Test: %ld \n", res2);
+
+
+    // int final = 0;
+    // for(int i = 0; i < array_size; i++)
+    // {
+    //     final += popcnt(res[i]);
+    // }
+    //printf("Number of ones:%d\n", final);
+    printf("# passed strings: %d \n", passed);
 
 
     //Testing SIMD Optimized
-    simd_compare_32v(str_vector, v_str_ref,VECTOR_SIZE, ERROR_THERSHOLD);
+    simd_compare_32v(str_vector, v_str_ref,STRING_SIZE, ERROR_THERSHOLD);
 
 
     //TODO add your function here
