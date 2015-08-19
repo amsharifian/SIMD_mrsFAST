@@ -23,6 +23,8 @@ int popcnt(long comparision)
 
 int main()
 {
+    int w_size;
+    w_size = 8 * (sizeof(char));
 
     int passed = 0;
     char **test_str;
@@ -62,7 +64,7 @@ int main()
             res[i] = 0;
         }
     }
-    
+
 
     srand(100);
 
@@ -78,10 +80,10 @@ int main()
         generateSecondRandomSeq(str_ref, test_str[i]);
         print(test_str[i]);
     }
-    bitConvert(str_ref, v_str_ref);
+    bitConvert_32(str_ref, v_str_ref);
     for(int i = 0; i < STRING_SIZE; i++)
     {
-        bitConvert(test_str[i], str_vector[i]);
+        bitConvert_32(test_str[i], str_vector[i]);
     }
 
     for(int p = 0; p < STRING_SIZE; p++)
@@ -112,6 +114,10 @@ int main()
 
     //TODO add your function here
 
+    std::cout << "shrot int: " << sizeof(short int) << std::endl;
+    std::cout << "int: " << sizeof(int) << std::endl;
+    std::cout << "long: " <<sizeof(long) << std::endl;
+    std::cout << "char: " << sizeof(char) << std::endl;
     //Freeing memory
     delete[] str_ref;   
     delete[] res;
