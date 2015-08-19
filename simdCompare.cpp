@@ -127,10 +127,11 @@ int recompute_stride(int *flag, int *index, int len)
 
 void simd_compare_32v(long ***str, long **conststr, int len, int error_thershold)
 {
+    int w_size = 8 * sizeof(int);
     int reminder = 0;
     int valid = 0;
 
-    int array_size = ((VECTOR_SIZE - 1)/WORD_SIZE) + 1;
+    int array_size = ((VECTOR_SIZE - 1)/w_size) + 1;
 
     int *flag      = new int[len];
     int *stride    = new int[len];
@@ -179,7 +180,7 @@ void simd_compare_32v(long ***str, long **conststr, int len, int error_thershold
     {
         for (int i = 0; i < len; i = i+4)
         {
-            for(int k = 0; k < 3; k++)
+            for(int k = 0; k < BITSIZE; k++)
             {
 
                 if ((valid - 1) > 4)
@@ -235,22 +236,24 @@ void simd_compare_32v(long ***str, long **conststr, int len, int error_thershold
                                 regConstant = mvmd<32>::fill4(conststr[j][k], conststr[j][k], conststr[j][k], 0);
 
                                 r_tmp = simd_xor(regTarget, regConstant);
-                                r_poptmp = simd<32>::popcount(r_tmp);
+                                r_temp_or = simd_or(r_temp_or, r_tmp);
 
-                                r_err_count = mvmd<32>::fill4(err_count[stride[i]], err_count[stride[i+1]], err_count[stride[i+2]],0);
-                                r_err_count = simd<32>::add(r_err_count, r_poptmp);
+                                //r_poptmp = simd<32>::popcount(r_tmp);
 
-                                r_err_thershold = mvmd<32>::fill4(error_thershold, error_thershold, error_thershold, 0);
+                                //r_err_count = mvmd<32>::fill4(err_count[stride[i]], err_count[stride[i+1]], err_count[stride[i+2]],0);
+                                //r_err_count = simd<32>::add(r_err_count, r_poptmp);
+
+                                //r_err_thershold = mvmd<32>::fill4(error_thershold, error_thershold, error_thershold, 0);
 
 
-                                r_res_compare = simd<32>::gt(r_err_count, r_err_thershold);
-                                r_flag = mvmd<32>::fill4(flag[stride[i]], flag[stride[i+1]], flag[stride[i+2]], 0);
-                                r_flag = simd<32>::add(r_flag,r_res_compare);
+                                //r_res_compare = simd<32>::gt(r_err_count, r_err_thershold);
+                                //r_flag = mvmd<32>::fill4(flag[stride[i]], flag[stride[i+1]], flag[stride[i+2]], 0);
+                                //r_flag = simd<32>::add(r_flag,r_res_compare);
 
                                 //Extract flags from simd register
-                                flag[i+stride[i]]   = mvmd<32>::extract<0>(r_flag);
-                                flag[i+stride[i+1]] = mvmd<32>::extract<1>(r_flag);
-                                flag[i+stride[i+2]] = mvmd<32>::extract<2>(r_flag);
+                                //flag[i+stride[i]]   = mvmd<32>::extract<0>(r_flag);
+                                //flag[i+stride[i+1]] = mvmd<32>::extract<1>(r_flag);
+                                //flag[i+stride[i+2]] = mvmd<32>::extract<2>(r_flag);
                                 break;
                             }
                         case 2:
@@ -259,21 +262,23 @@ void simd_compare_32v(long ***str, long **conststr, int len, int error_thershold
                                 regConstant = mvmd<32>::fill4(conststr[j][k], conststr[j][k],0 ,0);
 
                                 r_tmp = simd_xor(regTarget, regConstant);
-                                r_poptmp = simd<32>::popcount(r_tmp);
+                                r_temp_or = simd_or(r_temp_or, r_tmp);
 
-                                r_err_count = mvmd<32>::fill4(err_count[i+stride[i]], err_count[i+stride[i+1]],0 ,0);
-                                r_err_count = simd<32>::add(r_err_count, r_poptmp);
+                                //r_poptmp = simd<32>::popcount(r_tmp);
 
-                                r_err_thershold = mvmd<32>::fill4(error_thershold, error_thershold, 0, 0);
+                                //r_err_count = mvmd<32>::fill4(err_count[i+stride[i]], err_count[i+stride[i+1]],0 ,0);
+                                //r_err_count = simd<32>::add(r_err_count, r_poptmp);
+
+                                //r_err_thershold = mvmd<32>::fill4(error_thershold, error_thershold, 0, 0);
 
 
-                                r_res_compare = simd<32>::gt(r_err_count, r_err_thershold);
-                                r_flag = mvmd<32>::fill4(flag[i+stride[i]], flag[i+stride[i+1]], 0, 0);
-                                r_flag = simd<32>::add(r_flag,r_res_compare);
+                                //r_res_compare = simd<32>::gt(r_err_count, r_err_thershold);
+                                //r_flag = mvmd<32>::fill4(flag[i+stride[i]], flag[i+stride[i+1]], 0, 0);
+                                //r_flag = simd<32>::add(r_flag,r_res_compare);
 
                                 //Extract flags from simd register
-                                flag[i+stride[i]]   = mvmd<32>::extract<0>(r_flag);
-                                flag[i+stride[i+1]] = mvmd<32>::extract<1>(r_flag);
+                                //flag[i+stride[i]]   = mvmd<32>::extract<0>(r_flag);
+                                //flag[i+stride[i+1]] = mvmd<32>::extract<1>(r_flag);
                                 break;
                             }
                         case 1:
@@ -282,21 +287,23 @@ void simd_compare_32v(long ***str, long **conststr, int len, int error_thershold
                                 regConstant = mvmd<32>::fill4(conststr[j][k], conststr[j][k],0 ,0);
 
                                 r_tmp = simd_xor(regTarget, regConstant);
-                                r_poptmp = simd<32>::popcount(r_tmp);
+                                r_temp_or = simd_or(r_temp_or, r_tmp);
+                                
+                                //r_poptmp = simd<32>::popcount(r_tmp);
 
-                                r_err_count = mvmd<32>::fill4(err_count[i+stride[i]], err_count[i+stride[i+1]],0 ,0);
-                                r_err_count = simd<32>::add(r_err_count, r_poptmp);
+                                //r_err_count = mvmd<32>::fill4(err_count[i+stride[i]], err_count[i+stride[i+1]],0 ,0);
+                                //r_err_count = simd<32>::add(r_err_count, r_poptmp);
 
-                                r_err_thershold = mvmd<32>::fill4(error_thershold, error_thershold, 0, 0);
+                                //r_err_thershold = mvmd<32>::fill4(error_thershold, error_thershold, 0, 0);
 
 
-                                r_res_compare = simd<32>::gt(r_err_count, r_err_thershold);
-                                r_flag = mvmd<32>::fill4(flag[i+stride[i]], flag[i+stride[i+1]], 0, 0);
-                                r_flag = simd<32>::add(r_flag,r_res_compare);
+                                //r_res_compare = simd<32>::gt(r_err_count, r_err_thershold);
+                                //r_flag = mvmd<32>::fill4(flag[i+stride[i]], flag[i+stride[i+1]], 0, 0);
+                                //r_flag = simd<32>::add(r_flag,r_res_compare);
 
                                 //Extract flags from simd register
-                                flag[i+stride[i]]   = mvmd<32>::extract<0>(r_flag);
-                                flag[i+stride[i+1]] = mvmd<32>::extract<1>(r_flag);
+                                //flag[i+stride[i]]   = mvmd<32>::extract<0>(r_flag);
+                                //flag[i+stride[i+1]] = mvmd<32>::extract<1>(r_flag);
                                 break;
                             }
                         default:
