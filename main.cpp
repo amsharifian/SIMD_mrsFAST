@@ -23,8 +23,7 @@ int popcnt(long comparision)
 
 int main()
 {
-    int w_size;
-    w_size = 8 * (sizeof(char));
+    //int w_size = 8 * (sizeof(char));
 
     int passed = 0;
     char **test_str;
@@ -114,10 +113,6 @@ int main()
 
     //TODO add your function here
 
-    std::cout << "shrot int: " << sizeof(short int) << std::endl;
-    std::cout << "int: " << sizeof(int) << std::endl;
-    std::cout << "long: " <<sizeof(long) << std::endl;
-    std::cout << "char: " << sizeof(char) << std::endl;
     //Freeing memory
     delete[] str_ref;   
     delete[] res;

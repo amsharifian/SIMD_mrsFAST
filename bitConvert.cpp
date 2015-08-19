@@ -62,7 +62,7 @@ void bitConvert_8(char *inputString, char **test)
 }
 
 
-void bitConvert_16(char *inputString, short int **test)
+void bitConvert_16(short int *inputString, short int **test)
 {
     int w_size = 8 * sizeof(short int);
     int cnt;
@@ -123,7 +123,7 @@ void bitConvert_16(char *inputString, short int **test)
 }
 
 
-void bitConvert_32(char *inputString, int **test)
+void bitConvert_32(char *inputString, long **test)
 {
     int w_size = 8 * sizeof(int);
     int cnt;
