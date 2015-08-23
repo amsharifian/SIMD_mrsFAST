@@ -1,9 +1,9 @@
 #ifndef __BITVECTOR__
 #define __BITVECTOR__
 
-void bitConvert_8(char * inputString, char **vector);
-void bitConvert_16(char * inputString, short int **vector);
-void bitConvert_32(char * inputString, long **vector);
-void bitConvert_64(char * inputString, long **vector);
+extern "C" void bitConvert_8v(char * inputString, char **vector, int str_len);
+extern "C" void bitConvert_16v(char * inputString, short int **vector, int str_len);
+extern "C" void bitConvert_32v(char * inputString, long **vector, int str_len);
+extern "C" void bitConvert_64v(char * inputString, long **vector, int str_len);
 
 #endif

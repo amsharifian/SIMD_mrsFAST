@@ -1,6 +1,39 @@
 #include"simdCompare.hpp"
 
 
+void fill(char *array, int len, int val)
+{
+    for(int i = 0; i < len; i ++)
+    {
+        array[i] = val;
+    }
+}
+
+
+void fill(short int *array, int len, int val)
+{
+    for(int i = 0; i < len; i ++)
+    {
+        array[i] = val;
+    }
+}
+
+void fill(int *array, int len, int val)
+{
+    for(int i = 0; i < len; i ++)
+    {
+        array[i] = val;
+    }
+}
+
+void fill(long *array, int len, int val)
+{
+    for(int i = 0; i < len; i ++)
+    {
+        array[i] = val;
+    }
+}
+
 /// This function compares two converted string in vertical manner
 /// @param [in] str1 First string
 /// @param [in] str2 Second string
@@ -68,8 +101,8 @@ long simple_simd_compare(long **str1, long **str2)
             simd_s1[2] = mvmd<32>::fill4(str1[0][2], str1[1][2], str1[2][2],0);
 
             simd_s2[0] = mvmd<32>::fill4(str2[0][0], str2[1][0], str1[2][0],0);
-            simd_s2[0] = mvmd<32>::fill4(str2[0][1], str2[1][1], str2[2][1],0);
-            simd_s2[0] = mvmd<32>::fill4(str2[0][2], str2[1][2], str2[2][2],0);
+            simd_s2[1] = mvmd<32>::fill4(str2[0][1], str2[1][1], str2[2][1],0);
+            simd_s2[2] = mvmd<32>::fill4(str2[0][2], str2[1][2], str2[2][2],0);
         }
 
         else
@@ -79,16 +112,20 @@ long simple_simd_compare(long **str1, long **str2)
             simd_s1[2] = mvmd<32>::fill4(str1[0][2], str1[1][2], str1[2][2],str1[3][2]);
 
             simd_s2[0] = mvmd<32>::fill4(str2[0][0], str2[1][0], str1[2][0], str2[3][0]);
-            simd_s2[0] = mvmd<32>::fill4(str2[0][1], str2[1][1], str2[2][1], str2[3][1]);
-            simd_s2[0] = mvmd<32>::fill4(str2[0][1], str2[1][1], str2[2][1], str2[3][2]);
+            simd_s2[1] = mvmd<32>::fill4(str2[0][1], str2[1][1], str2[2][1], str2[3][1]);
+            simd_s2[2] = mvmd<32>::fill4(str2[0][2], str2[1][2], str2[2][2], str2[3][2]);
 
         }
     }
+
+    //print_register("simd_s1", simd_s1[2]);
+    //print_register("simd_s2", simd_s2[2]);
 
     for(int i = 0; i < 3; i++)
     {
         temp = simd_xor(simd_s1[i], simd_s2[i]);
         res = simd_or(res,temp);
+        //print_register("tmp_xor", temp);
     }
 
     pop = simd<128>::popcount(res);
@@ -152,9 +189,14 @@ int recompute_stride(int *flag, int *index, int len)
     {
         err_count[i] = 0;
     }
-    valid = recompute_stride(flag,stride,len);
 
-    std::fill(flag, flag + len, 1);
+    fill(err_count, len, 0);
+    fill(flag, len, 1);
+
+
+    valid = recompute_stride(flag,stride,len);
+    //memset(flag, 1, len * sizeof(flag));
+    //std:: cout << flag[0] << flag[1] << std::endl;
 
     BitBlock regTarget, regConstant;
     BitBlock r_tmp, r_poptmp, r_flag;
@@ -176,7 +218,7 @@ int recompute_stride(int *flag, int *index, int len)
             for(int k = 0; k < BITSIZE; k++)
             {
 
-                if ((valid - 1) > 4)
+                if ((valid) >= 4)
                 {
                     //Copying 32bit form Reads to the SIMD registers and duplicating 32bits from const char
                     // 
@@ -212,11 +254,11 @@ int recompute_stride(int *flag, int *index, int len)
                     r_tmp = simd_xor(regTarget, regConstant);
                     r_temp_or = simd_or(r_temp_or, r_tmp); 
 
-                    print_register("regConstant", regConstant);
-                    print_register("regTarget", regTarget);
+                    //print_register("regConstant", regConstant);
+                    //print_register("regTarget", regTarget);
 
-                    print_register("r_tmp", r_tmp);
-                    print_register("r_temp_or", r_temp_or);
+                    //print_register("r_tmp", r_tmp);
+                    //print_register("r_temp_or", r_temp_or);
 
                 }
                 else
@@ -263,9 +305,9 @@ int recompute_stride(int *flag, int *index, int len)
             //Computing errors
 
             r_poptmp = simd<32>::popcount(r_temp_or);
-            print_register("r_poptmp", r_poptmp);
+            //print_register("r_poptmp", r_poptmp);
             r_res_compare = simd<32>::gt(r_poptmp, r_err_thershold);
-            print_register("r_res_compare", r_res_compare);
+            //print_register("r_res_compare", r_res_compare);
 
 
             //print_register("r_res_compare: ", r_res_compare);
@@ -279,6 +321,11 @@ int recompute_stride(int *flag, int *index, int len)
             flag[i+stride[i+2]] = mvmd<32>::extract<2>(r_flag);
             flag[i+stride[i+3]] = mvmd<32>::extract<3>(r_flag);
             
+            for(int i = 0; i < len; i++)
+            {
+                std::cout << stride[i] << " ";
+            }
+            std::cout << std::endl;
             valid = recompute_stride(flag,stride,len);
 
         }
@@ -313,9 +360,11 @@ void simd_compare_16v(short int ***str, short int **conststr, int len, int error
         err_count[i] = 0;
     }
 
-    valid = recompute_stride(flag,stride,len);
 
-    std::fill(flag, flag + len, 1);
+    fill(err_count, len, 0);
+    fill(flag, len, 1);
+
+    valid = recompute_stride(flag,stride,len);
 
     BitBlock regTarget, regConstant;
     BitBlock r_tmp, r_poptmp, r_flag;
@@ -338,7 +387,7 @@ void simd_compare_16v(short int ***str, short int **conststr, int len, int error
             for(int k = 0; k < BITSIZE; k++)
             {
 
-                if ((valid - 1) > 8)
+                if ((valid) >= 8)
                 {
                     //Copying 16bit form Reads to the SIMD registers and duplicating 32bits from const char
                     // 
@@ -508,7 +557,7 @@ void simd_compare_16v(short int ***str, short int **conststr, int len, int error
     }
 }
 
-/*void simd_compare_8v(char ***str, char **conststr, int len, int error_thershold)
+void simd_compare_8v(char ***str, char **conststr, int len, int error_thershold)
 {
     int w_size = 8 * sizeof(char);
     int reminder = 0;
@@ -532,10 +581,11 @@ void simd_compare_16v(short int ***str, short int **conststr, int len, int error
     }
 
 
-    valid = recompute_stride(flag,stride,len);
 
-    std::fill(err_count, err_count+len, 0);
-    std::fill(flag, flag + len, 1);
+    fill(err_count, len, 0);
+    fill(flag, len, 1);
+
+    valid = recompute_stride(flag,stride,len);
 
     BitBlock regTarget, regConstant;
     BitBlock r_tmp, r_poptmp, r_flag;
@@ -559,7 +609,7 @@ void simd_compare_16v(short int ***str, short int **conststr, int len, int error
         {
             for(int k = 0; k < BITSIZE; k++)
             {
-                if ((valid - 1) > 16)
+                if ((valid ) >= 16)
                 {
                     //Copying 16bit form Reads to the SIMD registers and duplicating 32bits from const char
                     // 
@@ -891,26 +941,26 @@ void simd_compare_16v(short int ***str, short int **conststr, int len, int error
 
 
             //Extract flags from simd register
-            flag[i+stride[i]]       = mvmd<16>::extract<0>(r_flag);
-            flag[i+stride[i+1]]     = mvmd<16>::extract<1>(r_flag);
-            flag[i+stride[i+2]]     = mvmd<16>::extract<2>(r_flag);
-            flag[i+stride[i+3]]     = mvmd<16>::extract<3>(r_flag);
-            flag[i+stride[i+4]]     = mvmd<16>::extract<4>(r_flag);
-            flag[i+stride[i+5]]     = mvmd<16>::extract<5>(r_flag);
-            flag[i+stride[i+6]]     = mvmd<16>::extract<6>(r_flag);
-            flag[i+stride[i+7]]     = mvmd<16>::extract<7>(r_flag);
-            flag[i+stride[i+8]]     = mvmd<16>::extract<8>(r_flag);
-            flag[i+stride[i+9]]     = mvmd<16>::extract<9>(r_flag);
-            flag[i+stride[i+10]]    = mvmd<16>::extract<10>(r_flag);
-            flag[i+stride[i+11]]    = mvmd<16>::extract<11>(r_flag);
-            flag[i+stride[i+12]]    = mvmd<16>::extract<12>(r_flag);
-            flag[i+stride[i+13]]    = mvmd<16>::extract<13>(r_flag);
-            flag[i+stride[i+14]]    = mvmd<16>::extract<14>(r_flag);
-            flag[i+stride[i+15]]    = mvmd<16>::extract<15>(r_flag);
+            flag[i+stride[i]]       = mvmd<8>::extract<0>(r_flag);
+            flag[i+stride[i+1]]     = mvmd<8>::extract<1>(r_flag);
+            flag[i+stride[i+2]]     = mvmd<8>::extract<2>(r_flag);
+            flag[i+stride[i+3]]     = mvmd<8>::extract<3>(r_flag);
+            flag[i+stride[i+4]]     = mvmd<8>::extract<4>(r_flag);
+            flag[i+stride[i+5]]     = mvmd<8>::extract<5>(r_flag);
+            flag[i+stride[i+6]]     = mvmd<8>::extract<6>(r_flag);
+            flag[i+stride[i+7]]     = mvmd<8>::extract<7>(r_flag);
+            flag[i+stride[i+8]]     = mvmd<8>::extract<8>(r_flag);
+            flag[i+stride[i+9]]     = mvmd<8>::extract<9>(r_flag);
+            flag[i+stride[i+10]]    = mvmd<8>::extract<10>(r_flag);
+            flag[i+stride[i+11]]    = mvmd<8>::extract<11>(r_flag);
+            flag[i+stride[i+12]]    = mvmd<8>::extract<12>(r_flag);
+            flag[i+stride[i+13]]    = mvmd<8>::extract<13>(r_flag);
+            flag[i+stride[i+14]]    = mvmd<8>::extract<14>(r_flag);
+            flag[i+stride[i+15]]    = mvmd<8>::extract<15>(r_flag);
 
             
             valid = recompute_stride(flag,stride,len);
 
         }
     }
-}*/
+}

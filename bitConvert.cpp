@@ -1,12 +1,12 @@
 #include "common.hpp"
 
 
-void bitConvert_8(char *inputString, char **test)
+void bitConvert_8v(char *inputString, char **test, int str_len)
 {
     int w_size = 8 * sizeof(char);
     int cnt;
     char tmp;
-    int array_size = VECTOR_SIZE/w_size;
+    int array_size = ((str_len - 1) / w_size) + 1;
 
     for(int i =0; i < array_size; i++)
     {
@@ -62,12 +62,12 @@ void bitConvert_8(char *inputString, char **test)
 }
 
 
-void bitConvert_16(short int *inputString, short int **test)
+void bitConvert_16v(short int *inputString, short int **test, int str_len)
 {
     int w_size = 8 * sizeof(short int);
     int cnt;
     char tmp;
-    int array_size = VECTOR_SIZE/w_size;
+    int array_size = str_len/w_size;
 
     for(int i =0; i < array_size; i++)
     {
@@ -123,12 +123,13 @@ void bitConvert_16(short int *inputString, short int **test)
 }
 
 
-void bitConvert_32(char *inputString, long **test)
+void bitConvert_32v(char *inputString, long **test, int str_len)
 {
     int w_size = 8 * sizeof(int);
     int cnt;
     char tmp;
-    int array_size = VECTOR_SIZE/w_size;
+    int array_size = ((str_len - 1) / w_size) + 1;
+
 
     for(int i =0; i < array_size; i++)
     {
@@ -183,12 +184,12 @@ void bitConvert_32(char *inputString, long **test)
     }
 }
 
-void bitConvert_64(char *inputString, long **test)
+void bitConvert_64v(char *inputString, long **test, int str_len)
 {
     int w_size = 8 * sizeof(long);
     int cnt;
     char tmp;
-    int array_size = VECTOR_SIZE/w_size;
+    int array_size = str_len/w_size;
 
     for(int i =0; i < array_size; i++)
     {
